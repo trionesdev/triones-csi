@@ -61,6 +61,7 @@ public class AliYunSms implements SmsTemplate {
         try {
             SendSmsResponse sendResponse = client.sendSms(sendSmsRequest);
             if (!Objects.equals("OK", sendResponse.getBody().getCode())) {
+                log.error("短信发送失败，错误码：{}，错误信息：{},请求参数：{}", sendResponse.getBody().getCode(), sendResponse.getBody().getMessage(), new Gson().toJson(sendSmsRequest));
                 throw new SmsException(sendResponse.getBody().getMessage());
             }
         } catch (Exception ex) {
