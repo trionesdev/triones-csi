@@ -9,9 +9,7 @@ import com.trionesdev.csi.api.oss.response.OssListObjectsResponse;
 import com.trionesdev.csi.api.oss.response.OssPutObjectResponse;
 import com.trionesdev.csi.api.oss.util.OssUtils;
 import io.minio.*;
-import io.minio.messages.DeleteResult;
-import io.minio.messages.DeleteRequest;
-import io.minio.messages.Item;
+import io.minio.messages.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -85,9 +83,9 @@ public class Minio implements OssTemplate {
         }
 
         String bucketName = bucketName(request.getBucketName());
-        List<DeleteRequest.Object> deleteObjects = request.getObjectNames()
+        List<DeleteObject> deleteObjects = request.getObjectNames()
                 .stream()
-                .map(DeleteRequest.Object::new)
+                .map(DeleteObject::new)
                 .collect(Collectors.toList());
 
         RemoveObjectsArgs args = RemoveObjectsArgs.builder()
@@ -96,9 +94,9 @@ public class Minio implements OssTemplate {
                 .build();
 
         try {
-            Iterable<Result<DeleteResult.Error>> results = minioClient.removeObjects(args);
-            for (Result<DeleteResult.Error> result : results) {
-                DeleteResult.Error error = result.get();
+            Iterable<Result<DeleteError>> results = minioClient.removeObjects(args);
+            for (Result<DeleteError> result : results) {
+                DeleteError error = result.get();
                 log.error("Error in deleting object " + error.objectName() + "; " + error.message());
             }
         } catch (Exception e) {
