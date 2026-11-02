@@ -2,8 +2,8 @@ package com.trionesdev.csi.huaweicloud.sms;
 
 import com.trionesdev.csi.api.sms.SmsException;
 import lombok.extern.slf4j.Slf4j;
-import okhttp3.*;
 import org.apache.commons.lang3.StringUtils;
+import shade.okhttp3.*;
 
 import javax.net.ssl.*;
 import java.io.UnsupportedEncodingException;

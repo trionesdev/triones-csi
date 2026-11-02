@@ -12,8 +12,8 @@
     <name>Triones:CSI:Dependencies</name>
 
     <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -22,42 +22,58 @@
             <dependency>
                 <groupId>com.google.cloud</groupId>
                 <artifactId>libraries-bom</artifactId>
-                <version>21.0.0</version>
+                <version>26.91.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
 
-
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>33.7.2-jre</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.15.0</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.22.4</version>
+            </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
-                <version>3.12.0</version>
+                <version>3.21.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
-                <version>4.4</version>
+                <version>4.6.0</version>
             </dependency>
             <dependency>
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
-                <version>2.16.1</version>
+                <version>2.22.0</version>
             </dependency>
             <dependency>
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
-                <version>4.10.0</version>
+<!--                <artifactId>okhttp-jvm</artifactId>-->
+<!--                <version>5.5.1</version>-->
+                <version>4.12.0</version>
             </dependency>
             <!--            tencentcloud-->
             <dependency>
                 <groupId>com.tencentcloudapi</groupId>
                 <artifactId>tencentcloud-sdk-java-ses</artifactId>
-                <version>3.1.1060</version>
+                <version>3.2.6</version>
             </dependency>
             <dependency>
                 <groupId>com.tencentcloudapi</groupId>
                 <artifactId>tencentcloud-sdk-java</artifactId>
-                <version>3.1.1089</version>
+                <version>3.2.50</version>
                 <exclusions>
                     <exclusion>
                         <groupId>com.squareup.okhttp3</groupId>
@@ -80,7 +96,7 @@
             <dependency>
                 <groupId>com.tencentcloudapi</groupId>
                 <artifactId>tencentcloud-sdk-java-common</artifactId>
-                <version>3.1.737</version>
+                <version>3.2.50</version>
                 <exclusions>
                     <exclusion>
                         <groupId>com.squareup.okhttp</groupId>
@@ -95,7 +111,7 @@
             <dependency>
                 <groupId>com.qcloud</groupId>
                 <artifactId>cos_api</artifactId>
-                <version>5.6.187</version>
+                <version>5.6.283</version>
                 <exclusions>
                     <exclusion>
                         <groupId>com.tencentcloudapi</groupId>
@@ -112,6 +128,14 @@
                 </exclusions>
             </dependency>
             <!--            tencentcloud-->
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId>
+                <artifactId>s3</artifactId>
+                <version>2.57.8</version>
+            </dependency>
+
+
+
             <!--         csi   api-->
             <dependency>
                 <groupId>com.trionesdev.csi</groupId>

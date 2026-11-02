@@ -9,6 +9,10 @@
     <artifactId>csi-api-ses</artifactId>
     <name>Triones:CSI:Api:Ses</name>
 
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
     <dependencies>
         <dependency>
             <groupId>com.trionesdev.csi</groupId>
